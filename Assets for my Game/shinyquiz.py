@@ -8,9 +8,11 @@ root = tk.Tk()
 #set the window title
 root.title("Pokemon Shiny Quiz")
 #set geometry for the window
-root.geometry('1400x1000')
+root.geometry("1400x1000")
 #make the window not resizable
 root.resizable(width=False, height=False)
+#the roots configuration for visual appeal
+root.configure(bg="#badcf9")
 #text options
 label = tk.Label(root,
     text="Welcome to the Pokemon Shiny Quiz!\n\n" \
@@ -19,7 +21,8 @@ label = tk.Label(root,
     height=3,              
     width=30,
     fg="black",                 
-    font=("Arial", 16, "bold"),             
+    font=("Arial", 16, "bold"),
+    bg="#badcf9",
     justify=tk.CENTER,    
     wraplength=250)
 label.pack(pady=20)
@@ -38,6 +41,10 @@ def button_click_q3(button_number, root, label):
     else:
         messagebox.showinfo("","Incorrect answer for question 3.")
         root.destroy()  # Close the current window
+
+def hintbutton3 (root, label):
+    """Function to show a hint for question 3."""
+    messagebox.showinfo("Hint", "The shiny form of Pikachu is a warm colour.")
 
 def question_3(root, label):
     """Function to start the quiz when the button is clicked."""
@@ -68,6 +75,12 @@ def question_3(root, label):
     image_label2.image = quizimg2
     image_label3.image = quizimg3
     image_label4.image = quizimg4
+    #hint button
+    hint = tk.Button(root, text="hint", command=lambda: 
+                     hintbutton3(root, label),
+                     font=("Arial", 16, "bold"), 
+                     )
+    hint.place(x=600, y=150, width=200, height=50),
 
 def button_click_q2(button_number, root, label):
     """Function to handle button clicks."""
@@ -79,6 +92,10 @@ def button_click_q2(button_number, root, label):
     else:
         messagebox.showinfo("","Incorrect answer for question 2.")
         question_3(root, label)
+
+def hintbutton2 (root, label):
+    """Function to show a hint for question 3."""
+    messagebox.showinfo("Hint", "The shiny form of Gyarados looks very angry.")
 
 def question_2(root, label):
     """Function to start the quiz when the button is clicked."""
@@ -109,7 +126,13 @@ def question_2(root, label):
     image_label2.image = quizimg2
     image_label3.image = quizimg3
     image_label4.image = quizimg4
-
+    #hint button
+    hint = tk.Button(root, text="hint", command=lambda: 
+                     hintbutton2(root, label),
+                     font=("Arial", 16, "bold"), 
+                     )
+    hint.place(x=600, y=150, width=200, height=50),
+    
 def button_click_q1(button_number, root, label):
     """Function to handle button clicks."""
     global points
@@ -121,6 +144,10 @@ def button_click_q1(button_number, root, label):
         messagebox.showinfo("","Incorrect answer for question 1.")
         question_2(root, label)
 
+def hintbutton1 (root, label):
+    """Function to show a hint for question 3."""
+    messagebox.showinfo("Hint", "The shiny form of Ponyta has a blue flame.")
+
 def question_1(root):
     """Function to start the quiz when the button is clicked."""
     global label_text
@@ -130,6 +157,7 @@ def question_1(root):
     root.title("Pokemon Shiny Quiz")
     #set geometry for the window
     root.geometry('1400x1000')
+    root.configure(bg="#badcf9")
     #make the window not resizable
     root.resizable(width=False, height=False)
     #text options
@@ -138,7 +166,8 @@ def question_1(root):
         anchor=tk.CENTER,      
         height=3,              
         width=30,
-        fg="black",                 
+        fg="black", 
+        bg="#badcf9",                
         font=("Arial", 16, "bold"),             
         justify=tk.CENTER,    
         wraplength=250)
@@ -170,23 +199,22 @@ def question_1(root):
     image_label2.image = quizimg2
     image_label3.image = quizimg3
     image_label4.image = quizimg4
+    #hint button
+    hint = tk.Button(root, text="hint", command=lambda: 
+                     hintbutton1(root, label),
+                     font=("Arial", 16, "bold"), 
+                     )
+    hint.place(x=600, y=150, width=200, height=50),
 
 #button options
 button = tk.Button(root, 
     text="Start Quiz", 
     command=lambda: question_1(root),
-    activebackground="light blue", 
-    activeforeground="white",
     anchor="center",
     bd=3,
-    bg="lightgray",
     cursor="hand2",
-    disabledforeground="gray",
-    fg="black",
     font=("Arial", 12),
     height=2,
-    highlightbackground="black",
-    highlightcolor="green",
     highlightthickness=2,
     justify="center",
     overrelief="raised",
