@@ -4,18 +4,64 @@ import tkinter.messagebox as messagebox
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 
-points = 0  # Global variable to keep track of points
+def reset_program(root):
+    """Function to reset the program."""
+    global points 
+    points = 0 #Reset points to 0
+    root.destroy()  #Close the current window
+    #create root window
+    root = tk.Tk()
+    #set the window title
+    root.title("Pokemon Shiny Quiz")
+    #set geometry for the window
+    root.geometry("1400x1000")
+    #make the window not resizable
+    root.resizable(width=False, height=False)
+    #the roots configuration for visual appeal
+    root.configure(bg="#badcf9")
+    #text options
+    label = tk.Label(root,
+        text="Welcome to the Pokemon Shiny Quiz!\n\n" \
+        "Click the button to start the quiz.",
+        anchor=tk.CENTER,      
+        height=3,              
+        width=30,
+        fg="black",                 
+        font=("Arial", 16, "bold"),
+        bg="#badcf9",
+        justify=tk.CENTER,    
+        wraplength=250)
+    label.pack(pady=20)
+
+    #button options
+    button = tk.Button(root, 
+        text="Start Quiz", 
+        command=lambda: question_1(root),
+        anchor="center",
+        bd=3,
+        cursor="hand2",
+        font=("Arial", 12),
+        height=2,
+        highlightthickness=2,
+        justify="center",
+        overrelief="raised",
+        width=15,
+        wraplength=100)
+    button.pack(padx=20, pady=20)
+
+points = 0  #Global variable to keep track of points   
 
 def button_click_q3(button_number, root, label):
     """Function to handle button clicks."""
     global points
     if button_number > 0:
         messagebox.showinfo("","Correct answer for question 3!")
-        points += button_number  # Add points based on the button clicked
-        root.destroy()  # Close the current window
+        points += button_number  #Add points based on the button clicked
+        root.destroy()
     else:
         messagebox.showinfo("","Incorrect answer for question 3.")
-        root.destroy()  # Close the current window
+        root.destroy()
+
     root = tk.Tk()
     #set the window title
     root.title("Pokemon Shiny Quiz")
@@ -36,6 +82,8 @@ def button_click_q3(button_number, root, label):
         justify=tk.CENTER,    
         wraplength=250)
     label.pack(pady=20)
+
+ S
 
 def hintbutton3 (root, label):
     """Function to show a hint for question 3."""
@@ -196,8 +244,7 @@ def question_1(root):
     #hint button
     hint = tk.Button(root, text="hint", command=lambda: 
                      hintbutton1(root, label),
-                     font=("Arial", 16, "bold"), 
-                     )
+                     font=("Arial", 16, "bold"))
     hint.place(x=600, y=150, width=200, height=50),
 
 #create root window
