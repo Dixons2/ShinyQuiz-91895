@@ -4,6 +4,8 @@ import tkinter.messagebox as messagebox
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 
+points = 0  #Global variable to keep track of points   
+
 def reset_program(root):
     """Function to reset the program."""
     global points 
@@ -49,8 +51,6 @@ def reset_program(root):
         wraplength=100)
     button.pack(padx=20, pady=20)
 
-points = 0  #Global variable to keep track of points   
-
 def button_click_q3(button_number, root, label):
     """Function to handle button clicks."""
     global points
@@ -82,6 +82,7 @@ def button_click_q3(button_number, root, label):
         justify=tk.CENTER,    
         wraplength=250)
     label.pack(pady=20)
+    kaboom = tk.Button(root, text="Reset Quiz", command=lambda: reset_program(root))
 
 def hintbutton3 (root, label):
     """Function to show a hint for question 3."""
@@ -91,22 +92,22 @@ def question_3(root, label):
     """Function to start the quiz when the button is clicked."""
     label.config(text="3. What is the shiny form of Pikachu?")
     #images for the first question
-    quizimg = Image.open("Assets for my Game/Pikachu1.png")
+    quizimg = Image.open("Quiz Files/Pikachu1.png")
     quizimg = ImageTk.PhotoImage(quizimg)
     image_label = tk.Button(root, image=quizimg, command=lambda: 
                             button_click_q3(0, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
-    quizimg2 = Image.open("Assets for my Game/Pikachu2.png")
+    quizimg2 = Image.open("Quiz Files/Pikachu2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root, image=quizimg2, command=lambda: 
                              button_click_q3(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
-    quizimg3 = Image.open("Assets for my Game/Pikachu3.png")
+    quizimg3 = Image.open("Quiz Files/Pikachu3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root, image=quizimg3, command=lambda: 
                              button_click_q3(1,root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
-    quizimg4 = Image.open("Assets for my Game/Pikachu4.png")
+    quizimg4 = Image.open("Quiz Files/Pikachu4.png")
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root, image=quizimg4, command=lambda: 
                              button_click_q3(0,root, label))
@@ -142,22 +143,22 @@ def question_2(root, label):
     """Function to start the quiz when the button is clicked."""
     label.config(text="2. What is the shiny form of Gyarados?")
     #images for the second question
-    quizimg = Image.open("Assets for my Game/Gyarados1.png")
+    quizimg = Image.open("Quiz Files/Gyarados1.png")
     quizimg = ImageTk.PhotoImage(quizimg)
     image_label = tk.Button(root, image=quizimg, command=lambda: 
                             button_click_q2(0, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
-    quizimg2 = Image.open("Assets for my Game/Gyarados2.png")
+    quizimg2 = Image.open("Quiz Files/Gyarados2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root, image=quizimg2, command=lambda: 
                              button_click_q2(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
-    quizimg3 = Image.open("Assets for my Game/Gyarados3.png")
+    quizimg3 = Image.open("Quiz Files/Gyarados3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root, image=quizimg3, command=lambda: 
                              button_click_q2(0,root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
-    quizimg4 = Image.open("Assets for my Game/Gyarados4.png")
+    quizimg4 = Image.open("Quiz Files/Gyarados4.png")
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root, image=quizimg4, command=lambda: 
                              button_click_q2(1,root, label))
@@ -214,22 +215,22 @@ def question_1(root):
         wraplength=250)
     label.pack(pady=20)
     #images for the first question
-    quizimg = Image.open("Assets for my Game/Ponyta1.png")
+    quizimg = Image.open("Quiz Files/Ponyta1.png")
     quizimg = ImageTk.PhotoImage(quizimg)
     image_label = tk.Button(root, image=quizimg, command=lambda: 
                             button_click_q1(1, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
-    quizimg2 = Image.open("Assets for my Game/Ponyta2.png")
+    quizimg2 = Image.open("Quiz Files/Ponyta2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root, image=quizimg2, command=lambda: 
                              button_click_q1(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
-    quizimg3 = Image.open("Assets for my Game/Ponyta3.png")
+    quizimg3 = Image.open("Quiz Files/Ponyta3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root, image=quizimg3, command=lambda: 
                              button_click_q1(0, root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
-    quizimg4 = Image.open("Assets for my Game/Ponyta4.png")
+    quizimg4 = Image.open("Quiz Files/Ponyta4.png")
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root, image=quizimg4, command=lambda: 
                              button_click_q1(0, root, label))
