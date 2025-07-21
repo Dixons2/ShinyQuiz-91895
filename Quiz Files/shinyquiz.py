@@ -83,8 +83,6 @@ def button_click_q3(button_number, root, label):
         wraplength=250)
     label.pack(pady=20)
 
- S
-
 def hintbutton3 (root, label):
     """Function to show a hint for question 3."""
     messagebox.showinfo("Hint", "The shiny form of Pikachu is a warm colour.")
