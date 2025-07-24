@@ -44,11 +44,8 @@ def reset_program(root):
         cursor="hand2",
         font=("Arial", 16, "bold"),
         height=2,
-        highlightthickness=2,
         justify="center",
-        overrelief="raised",
-        width=15,
-        wraplength=100)
+        width=15)
     button.pack(padx=20, pady=20)
 
 def button_click_q3(button_number, root, label):
@@ -83,11 +80,13 @@ def button_click_q3(button_number, root, label):
         wraplength=250)
     label.pack(pady=20)
     kaboom = tk.Button(root, text="Reset Quiz", 
+    cursor="hand2",
     command=lambda: reset_program(root), 
     font=("Arial", 16, "bold"))
     kaboom.place(x=525, y=130, width=150, height=100)
     exit = tk.Button(root, text="Exit", 
     command=root.destroy, 
+    cursor="hand2",
     font=("Arial", 16, "bold"))
     exit.place(x=725, y=130, width=150, height=100)
 
@@ -103,24 +102,28 @@ def question_3(root, label):
     quizimg = ImageTk.PhotoImage(quizimg)
     image_label = tk.Button(root, 
     image=quizimg, 
+    cursor="hand2",
     command=lambda: button_click_q3(0, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
     quizimg2 = Image.open("Quiz Files/Pikachu2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root, 
     image=quizimg2, 
+    cursor="hand2",
     command=lambda: button_click_q3(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
     quizimg3 = Image.open("Quiz Files/Pikachu3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root, 
     image=quizimg3, 
+    cursor="hand2",
     command=lambda: button_click_q3(1,root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
     quizimg4 = Image.open("Quiz Files/Pikachu4.png")
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root, 
     image=quizimg4, 
+    cursor="hand2",
     command=lambda: button_click_q3(0,root, label))
     image_label4.place(x=700, y=530, width=288, height=288)
     #keep a reference to the image to prevent garbage collection
@@ -132,7 +135,8 @@ def question_3(root, label):
     hint = tk.Button(root, 
     text="Hint", 
     command=lambda: hintbutton3(root, label),
-    font=("Arial", 16, "bold"))
+    font=("Arial", 16, "bold"),
+    cursor="hand2")
     hint.place(x=600, y=150, width=200, height=50),
 
 def button_click_q2(button_number, root, label):
@@ -158,24 +162,28 @@ def question_2(root, label):
     quizimg = ImageTk.PhotoImage(quizimg)
     image_label = tk.Button(root, 
     image=quizimg, 
+    cursor="hand2",
     command=lambda: button_click_q2(0, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
     quizimg2 = Image.open("Quiz Files/Gyarados2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root, 
     image=quizimg2, 
+    cursor="hand2",
     command=lambda: button_click_q2(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
     quizimg3 = Image.open("Quiz Files/Gyarados3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root, 
     image=quizimg3, 
+    cursor="hand2",
     command=lambda: button_click_q2(0,root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
     quizimg4 = Image.open("Quiz Files/Gyarados4.png")
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root, 
     image=quizimg4, 
+    cursor="hand2",
     command=lambda: button_click_q2(1,root, label))
     image_label4.place(x=700, y=530, width=288, height=288)
     #keep a reference to the image to prevent garbage collection
@@ -187,7 +195,8 @@ def question_2(root, label):
     hint = tk.Button(root, 
     text="Hint", 
     command=lambda: hintbutton2(root, label),
-    font=("Arial", 16, "bold"))
+    font=("Arial", 16, "bold"),
+    cursor="hand2")
     hint.place(x=600, y=150, width=200, height=50),
     
 def button_click_q1(button_number, root, label):
@@ -234,18 +243,21 @@ def question_1(root):
     quizimg = ImageTk.PhotoImage(quizimg)
     image_label = tk.Button(root, 
     image=quizimg, 
+    cursor="hand2",
     command=lambda: button_click_q1(1, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
     quizimg2 = Image.open("Quiz Files/Ponyta2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root, 
     image=quizimg2, 
+    cursor="hand2",
     command=lambda: button_click_q1(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
     quizimg3 = Image.open("Quiz Files/Ponyta3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root, 
     image=quizimg3, 
+    cursor="hand2",
     command=lambda: 
     button_click_q1(0, root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
@@ -253,6 +265,7 @@ def question_1(root):
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root, 
     image=quizimg4, 
+    cursor="hand2",
     command=lambda: button_click_q1(0, root, label))
     image_label4.place(x=700, y=530, width=288, height=288)
     #keep a reference to the image to prevent garbage collection
@@ -264,7 +277,8 @@ def question_1(root):
     hint = tk.Button(root, 
     text="Hint", 
     command=lambda: hintbutton1(root, label),
-    font=("Arial", 16, "bold"))
+    font=("Arial", 16, "bold"),
+    cursor="hand2")
     hint.place(x=600, y=150, width=200, height=50),
 
 #create root window
@@ -300,10 +314,7 @@ button = tk.Button(root,
     cursor="hand2",
     font=("Arial", 16, "bold"),
     height=2,
-    highlightthickness=2,
     justify="center",
-    overrelief="raised",
-    width=15,
-    wraplength=100)
+    width=15)
 button.pack(padx=20, pady=20)
 root.mainloop()
