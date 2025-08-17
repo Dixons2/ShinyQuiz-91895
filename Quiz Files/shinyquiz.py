@@ -1,3 +1,11 @@
+"""
+File: shinyquiz.py
+Author: Sean Dixon
+Date: 2025-08-17
+Description: A Simple Pokemon Shiny Quiz 
+Application using Tkinter, PIL and Python.
+"""
+
 """importing plugins/addons."""
 import tkinter as tk
 import tkinter.messagebox as messagebox
