@@ -53,15 +53,15 @@ def reset_program(root):
     button.pack(padx=20, pady=20)
 
 
-def button_click_q3(button_number, root, label):
+def button_click_q10(button_number, root, label):
     """Handle button clicks."""
     global points
     if button_number > 0:
-        messagebox.showinfo("", "Correct answer for question 3!")
+        messagebox.showinfo("", "Correct answer for question 10!")
         points += button_number  # Add points based on the button clicked
         root.destroy()
     else:
-        messagebox.showinfo("", "Incorrect answer for question 3.")
+        messagebox.showinfo("", "Incorrect answer for question 10.")
         root.destroy()
 
     root = tk.Tk()
@@ -96,12 +96,12 @@ def button_click_q3(button_number, root, label):
     exit.place(x=725, y=130, width=150, height=100)
 
 
-def hintbutton3(root, label):
-    """Show a hint for question 3."""
+def hintbutton10(root, label):
+    """Show a hint for question 10."""
     messagebox.showinfo("Hint", "The shiny form of Pikachu is a warm colour.")
 
 
-def question_3(root, label):
+def question_10(root, label):
     """Start the quiz when the button is clicked."""
     label.config(text="3. What is the shiny form of Pikachu?")
     # images for the first question
@@ -110,28 +110,469 @@ def question_3(root, label):
     image_label = tk.Button(root,
         image=quizimg,
         cursor="hand2",
-        command=lambda: button_click_q3(0, root, label))
+        command=lambda: button_click_q10(0, root, label))
     image_label.place(x=400, y=230, width=288, height=288)
     quizimg2 = Image.open("Quiz Files/Pikachu2.png")
     quizimg2 = ImageTk.PhotoImage(quizimg2)
     image_label2 = tk.Button(root,
         image=quizimg2,
         cursor="hand2",
-        command=lambda: button_click_q3(0, root, label))
+        command=lambda: button_click_q10(0, root, label))
     image_label2.place(x=700, y=230, width=288, height=288)
     quizimg3 = Image.open("Quiz Files/Pikachu3.png")
     quizimg3 = ImageTk.PhotoImage(quizimg3)
     image_label3 = tk.Button(root,
         image=quizimg3,
         cursor="hand2",
-        command=lambda: button_click_q3(1, root, label))
+        command=lambda: button_click_q10(1, root, label))
     image_label3.place(x=400, y=530, width=288, height=288)
     quizimg4 = Image.open("Quiz Files/Pikachu4.png")
     quizimg4 = ImageTk.PhotoImage(quizimg4)
     image_label4 = tk.Button(root,
         image=quizimg4,
         cursor="hand2",
+        command=lambda: button_click_q10(0, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton10(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+
+
+def button_click_q9(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 9!")
+        points += button_number  # Add points based on the button clicked
+        question_10(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 9.")
+        question_10(root, label)
+
+
+def hintbutton9(root, label):
+    """Show a hint for question 9."""
+    messagebox.showinfo("Hint", "The shiny form of Rayquaza has Red Lips.")
+
+
+def question_9(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="9. What is the shiny form of Rayquaza?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Rayquaza1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
+        command=lambda: button_click_q9(0, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Rayquaza2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q9(0, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Rayquaza3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q9(1, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Rayquaza4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q9(0, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton9(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+
+
+def button_click_q8(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 8!")
+        points += button_number  # Add points based on the button clicked
+        question_9(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 8.")
+        question_9(root, label)
+
+
+def hintbutton8(root, label):
+    """Show a hint for question 8."""
+    messagebox.showinfo("Hint", "The shiny form of Tyranitar is a sandy colour.")
+
+
+def question_8(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="8. What is the shiny form of Tyranitar?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Tyranitar1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
+        command=lambda: button_click_q8(0, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Tyranitar2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q8(1, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Tyranitar3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q8(0, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Tyranitar4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q8(0, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton8(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+
+
+def button_click_q7(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 7!")
+        points += button_number  # Add points based on the button clicked
+        question_8(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 7.")
+        question_8(root, label)
+
+
+def hintbutton7(root, label):
+    """Show a hint for question 7."""
+    messagebox.showinfo("Hint", "The shiny form of Lapras is purple.")
+
+
+def question_7(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="7. What is the shiny form of Lapras?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Lapras1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
+        command=lambda: button_click_q7(0, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Lapras2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q7(0, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Lapras3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q7(1, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Lapras4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q7(0, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton7(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+
+
+def button_click_q6(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 6!")
+        points += button_number  # Add points based on the button clicked
+        question_7(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 6.")
+        question_7(root, label)
+
+
+def hintbutton6(root, label):
+    """Show a hint for question 6."""
+    messagebox.showinfo("Hint", "The shiny form of Ampharos has blue orbs on its head and tail.")
+
+
+def question_6(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="6. What is the shiny form of Ampharos?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Ampharos1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
+        command=lambda: button_click_q6(0, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Ampharos2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q6(1, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Ampharos3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q6(0, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Ampharos4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q6(0, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton6(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+
+
+def button_click_q5(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 5!")
+        points += button_number  # Add points based on the button clicked
+        question_6(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 5.")
+        question_6(root, label)
+
+
+def hintbutton5(root, label):
+    """Show a hint for question 5."""
+    messagebox.showinfo("Hint", "The shiny form of Dragonite is a friendly colour with purple wings.")
+
+
+def question_5(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="5. What is the shiny form of Dragonite?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Dragonite1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
+        command=lambda: button_click_q5(0, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Dragonite2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q5(0, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Dragonite3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q5(0, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Dragonite4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q5(1, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton5(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+
+
+def button_click_q4(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 4!")
+        points += button_number  # Add points based on the button clicked
+        question_5(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 4.")
+        question_5(root, label)
+
+
+def hintbutton4(root, label):
+    """Show a hint for question 4."""
+    messagebox.showinfo("Hint", "The shiny form of Arcanine shines bright like the sun.")
+
+
+def question_4(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="4. What is the shiny form of Arcanine?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Arcanine1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
+        command=lambda: button_click_q4(1, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Arcanine2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q4(0, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Arcanine3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q4(0, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Arcanine4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q4(0, root, label))
+    image_label4.place(x=700, y=530, width=288, height=288)
+    # keep a reference to the image to prevent garbage collection
+    image_label.image = quizimg
+    image_label2.image = quizimg2
+    image_label3.image = quizimg3
+    image_label4.image = quizimg4
+    # hint button
+    hint = tk.Button(root,
+        text="Hint",
+        command=lambda: hintbutton4(root, label),
+        font=("Arial", 16, "bold"),
+        cursor="hand2")
+    hint.place(x=600, y=150, width=200, height=50)
+    
+
+def button_click_q3(button_number, root, label):
+    """Handle button clicks."""
+    global points
+    if button_number > 0:
+        messagebox.showinfo("", "Correct answer for question 3!")
+        points += button_number  # Add points based on the button clicked
+        question_4(root, label)
+    else:
+        messagebox.showinfo("", "Incorrect answer for question 3.")
+        question_4(root, label)
+
+
+def hintbutton3(root, label):
+    """Show a hint for question 4."""
+    messagebox.showinfo("Hint", "The shiny form of Bulbasaur is the colour of fresh cut grass.")
+
+
+def question_3(root, label):
+    """Start the quiz when the button is clicked."""
+    label.config(text="3. What is the shiny form of Bulbasaur?")
+    # images for the second question
+    quizimg = Image.open("Quiz Files/Bulbasaur1.png")
+    quizimg = ImageTk.PhotoImage(quizimg)
+    image_label = tk.Button(root,
+        image=quizimg,
+        cursor="hand2",
         command=lambda: button_click_q3(0, root, label))
+    image_label.place(x=400, y=230, width=288, height=288)
+    quizimg2 = Image.open("Quiz Files/Bulbasaur2.png")
+    quizimg2 = ImageTk.PhotoImage(quizimg2)
+    image_label2 = tk.Button(root,
+        image=quizimg2,
+        cursor="hand2",
+        command=lambda: button_click_q3(0, root, label))
+    image_label2.place(x=700, y=230, width=288, height=288)
+    quizimg3 = Image.open("Quiz Files/Bulbasaur3.png")
+    quizimg3 = ImageTk.PhotoImage(quizimg3)
+    image_label3 = tk.Button(root,
+        image=quizimg3,
+        cursor="hand2",
+        command=lambda: button_click_q3(0, root, label))
+    image_label3.place(x=400, y=530, width=288, height=288)
+    quizimg4 = Image.open("Quiz Files/Bulbasaur4.png")
+    quizimg4 = ImageTk.PhotoImage(quizimg4)
+    image_label4 = tk.Button(root,
+        image=quizimg4,
+        cursor="hand2",
+        command=lambda: button_click_q3(1, root, label))
     image_label4.place(x=700, y=530, width=288, height=288)
     # keep a reference to the image to prevent garbage collection
     image_label.image = quizimg
@@ -144,7 +585,7 @@ def question_3(root, label):
         command=lambda: hintbutton3(root, label),
         font=("Arial", 16, "bold"),
         cursor="hand2")
-    hint.place(x=600, y=150, width=200, height=50),
+    hint.place(x=600, y=150, width=200, height=50)
 
 
 def button_click_q2(button_number, root, label):
@@ -207,7 +648,7 @@ def question_2(root, label):
         command=lambda: hintbutton2(root, label),
         font=("Arial", 16, "bold"),
         cursor="hand2")
-    hint.place(x=600, y=150, width=200, height=50),
+    hint.place(x=600, y=150, width=200, height=50)
 
 
 def button_click_q1(button_number, root, label):
@@ -290,7 +731,7 @@ def question_1(root):
     command=lambda: hintbutton1(root, label),
     font=("Arial", 16, "bold"),
     cursor="hand2")
-    hint.place(x=600, y=150, width=200, height=50),
+    hint.place(x=600, y=150, width=200, height=50)
 
 # create root window
 root = tk.Tk()
