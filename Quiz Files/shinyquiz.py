@@ -1,5 +1,6 @@
 """A Simple Pokemon Shiny Quiz 
-Application using Tkinter, PIL and Python."""
+Application using Tkinter, PIL and Python.
+Sean Dixon - last commit 19/09/2025"""
 
 
 """importing plugins/addons."""
